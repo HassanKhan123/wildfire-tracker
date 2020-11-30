@@ -1,4 +1,5 @@
 import GoogleMapReact from 'google-map-react';
+import LocationMarker from './LocationMarker';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -12,7 +13,9 @@ const Map = ({ center, zoom }) => {
         }}
         defaultCenter={center}
         defaultZoom={zoom}
-      ></GoogleMapReact>
+      >
+        <LocationMarker lat={center.lat} lng={center.lng} />
+      </GoogleMapReact>
     </div>
   );
 };
